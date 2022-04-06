@@ -5,6 +5,8 @@
 	padding: 10px;
 	position: fixed;
 	right: -100%;
+	display: flex;
+	flex-direction: column;
 	top: 0;
 	width: 100%;
 	max-width: 320px;
@@ -19,6 +21,26 @@
 	margin-bottom: 10px;
 }
 
+.drawer__content {
+	padding: 10px 0;
+	overflow-y: auto;
+	flex: 1;
+}
+
+.drawer__footer {
+	background-color: #ccc;
+	padding: 5px;
+}
+
+.drawer__footer form {
+	display: flex;
+	flex-direction: column;
+}
+
+.drawer__footer form input {
+	margin-bottom: 5px;
+}
+
 .drawer__header button {
 	background-color: transparent;
 	padding: 0;
@@ -28,4 +50,5 @@
 .drawer[data-aberto="true"] {
 	right: 0;
 }
+
 

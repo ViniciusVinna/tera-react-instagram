@@ -3,17 +3,22 @@ import './Stories.css';
 
 import { Avatar } from '../Avatar';
 
-export default function Stories() {
+import { pegaStories } from './Stories.helpers';
+
+export default function Stories({ dados }) {
 	return (
 		<div className="container">
 			<section className="stories">
 				<div className="stories__container">
 
-					<Avatar
-						imagem="https://avatarfiles.alphacoders.com/125/thumb-125043.jpg"
-						tamanho="grande"
-						selecionavel={true}
-					/>
+					{pegaStories(dados).map((story) => (
+						<Avatar
+							key={story.id}
+							imagem={story.story}
+							tamanho="grande"
+							selecionavel={true}
+						/>
+					))}
 
 				</div>
 			</section>
