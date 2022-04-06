@@ -1,0 +1,31 @@
+.drawer {
+	background-color: white;
+	box-shadow: -5px 0 8px rgba(0, 0, 0, 0.2);
+	height: 100vh;
+	padding: 10px;
+	position: fixed;
+	right: -100%;
+	top: 0;
+	width: 100%;
+	max-width: 320px;
+	z-index: 9999;
+	transition: all 0.3s ease-in-out;
+}
+
+.drawer__header {
+	padding: 10px 0;
+	font-weight: bold;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+
+.drawer__header button {
+	background-color: transparent;
+	padding: 0;
+	border: none;
+}
+
+.drawer[data-aberto="true"] {
+	right: 0;
+}
+

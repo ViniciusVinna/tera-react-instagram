@@ -4,7 +4,7 @@ import instagramLogo from './instagram-logo.svg';
 
 import './Topbar.css';
 
-export default function Topbar() {
+export default function Topbar({ abrirChat }) {
 	return (
 		<header className="topbar">
 			<div className="container">
@@ -12,7 +12,7 @@ export default function Topbar() {
 					<img src={instagramLogo} alt="Instagram logo" />
 				</a>
 
-				<button className="topbar__icon">
+				<button className="topbar__icon" onClick={() => abrirChat(true)}>
 					<i className="far fa-paper-plane"></i>
 				</button>
 			</div>

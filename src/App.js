@@ -4,12 +4,17 @@ import './css/normalize.css';
 import './css/main.css';
 import './css/fontawesome.min.css';
 
-import { Topbar, Stories, Feed } from './components';
+import { Drawer, Topbar, Stories, Feed } from './components';
 
 function App() {
+	const [drawerAberto, setDrawerAberto] = React.useState(false);
+
+
   return (
 		<React.Fragment>
-			<Topbar />
+			<Drawer aberto={drawerAberto} fecharChat={setDrawerAberto} />
+
+			<Topbar abrirChat={setDrawerAberto} />
 
 			<Stories />
 
