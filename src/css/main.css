@@ -88,6 +88,10 @@ button {
 	font-size: 1.4rem;
 }
 
+.post__text {
+	padding: 0 10px;
+}
+
 .post__figure {
 	overflow: hidden;
 	margin: 0;

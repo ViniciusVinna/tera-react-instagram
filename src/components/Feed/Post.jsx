@@ -2,17 +2,19 @@ import React from 'react';
 
 import { Avatar } from '../Avatar';
 
-export default function Post() {
+const placeholderFoto = 'https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder.png';
+
+export default function Post({ avatar, nome, foto = placeholderFoto, texto = '' }) {
 	return (
 		<article className="post">
 			<header className="post__header">
 				<div className="user">
 
 					<Avatar
-						imagem="https://avatarfiles.alphacoders.com/125/thumb-125043.jpg"
+						imagem={avatar}
 						/>
 
-					<a href="/" className="user__name">Mestre Yoda</a>
+					<a href="/" className="user__name">{nome}</a>
 				</div>
 
 				<button className="post__context">
@@ -21,8 +23,12 @@ export default function Post() {
 			</header>
 
 			<figure className="post__figure">
-				<img src="img/profiles/yoda/yoda-1.jpg" alt=""/>
+				<img src={foto} alt={texto} />
 			</figure>
+
+			<div className="post__text">
+				<h4>{texto}</h4>
+			</div>
 
 			<nav className="post__controls">
 				<button className="post__control">

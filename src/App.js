@@ -41,8 +41,16 @@ function App() {
 						</Stories>
 
 						<Feed>
-							{usuarios.map((usuario) => (
-							<Post key={usuario.id} />
+							{usuarios
+								.filter((usuario) => usuario.photos.length > 0)
+								.map((usuario) => (
+							<Post
+								key={usuario.id}
+								avatar={usuario.avatar}
+								nome={usuario.name}
+								foto={usuario.photos[0]?.picture}
+								texto={usuario.photos[0]?.text}
+							/>
 							))}
 						</Feed>
 					</React.Fragment>
