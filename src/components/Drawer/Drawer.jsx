@@ -1,20 +1,10 @@
 import React from 'react';
 
 import './Drawer.css';
-// FIRACODE
-// JETBRAINS MONO
+import { DrawerForm } from './DrawerForm';
+import { DrawerContent } from './DrawerContent';
 
 const Drawer = ({ aberto = false, fecharChat }) => {
-	function enviaFormulario(event) {
-		event.preventDefault();
-
-		const nome = event.target.elements.nome.value;
-		const mensagem = event.target.elements.mensagem.value;
-
-		console.log({ nome, mensagem });
-	}
-
-
 	return (
 		<div className='drawer' data-aberto={aberto}>
 			<div className='drawer__header'>
@@ -26,18 +16,10 @@ const Drawer = ({ aberto = false, fecharChat }) => {
 				</button>
 			</div>
 
-			<div className='drawer__content'>
-				Olá, sou um drawer
-			</div>
+			<DrawerContent />
 
-			<footer className='drawer__footer'>
-				<form onSubmit={enviaFormulario}>
-					<input name="nome" type="text" placeholder="Nome" />
-					<input name="mensagem" type="text" placeholder="Digite sua mensagem" />
+			<DrawerForm />
 
-					<button type="submit">Enviar</button>
-				</form>
-			</footer>
 		</div>
 	)
 };

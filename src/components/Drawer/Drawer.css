@@ -51,4 +51,19 @@
 	right: 0;
 }
 
+.drawer__message {
+	padding: 5px;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	color: white;
+}
+
+.drawer__message:nth-child(odd) {
+	background-color: #4C47FF;
+}
+
+.drawer__message:nth-child(even) {
+	background-color: #8A18FF;
+}
+
 
