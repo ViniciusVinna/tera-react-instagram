@@ -4,10 +4,19 @@ export function DrawerForm() {
 	function enviaFormulario(event) {
 		event.preventDefault();
 
-		const nome = event.target.elements.nome.value;
-		const mensagem = event.target.elements.mensagem.value;
+		const name = event.target.elements.nome.value;
+		const comment = event.target.elements.mensagem.value;
 
-		console.log({ nome, mensagem });
+		fetch('https://624c9312c172b69d69274ae4.mockapi.io/api/v1/chat', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				name,
+				comment,
+			}),
+		})
 	}
 
 	return (
