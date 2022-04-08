@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { Avatar } from '../Avatar';
 
 const placeholderFoto = 'https://www.unfe.org/wp-content/uploads/2019/04/SM-placeholder.png';
 
-export default function Post({ avatar, nome, foto = placeholderFoto, texto = '' }) {
+export default function Post({ avatar, nome, foto = placeholderFoto, texto = '', idUsuario }) {
 	return (
 		<article className="post">
 			<header className="post__header">
@@ -14,7 +15,7 @@ export default function Post({ avatar, nome, foto = placeholderFoto, texto = '' 
 						imagem={avatar}
 						/>
 
-					<a href="/" className="user__name">{nome}</a>
+					<Link to={`/usuario/${idUsuario}`} className="user__name">{nome}</Link>
 				</div>
 
 				<button className="post__context">
